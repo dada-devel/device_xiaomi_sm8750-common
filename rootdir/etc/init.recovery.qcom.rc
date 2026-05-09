@@ -1,0 +1,8 @@
+on early-init
+    write /sys/class/power_supply/usb/otg_switch 1
+
+on init
+    write /sys/class/backlight/panel0-backlight/brightness 200
+
+on property:sys.usb.config=adb && property:sys.usb.configfs=1
+    start adbd

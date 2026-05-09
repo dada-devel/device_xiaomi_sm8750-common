@@ -1,0 +1,8 @@
+# Xiaomi SM8750 common file contexts
+
+# HAL executables
+/(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.qti              u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.fingerprintextension-service  u:object_r:hal_fingerprint_default_exec:s0
+
+# Firmware
+/odm/firmware(/.*)?       u:object_r:vendor_firmware_file:s0
