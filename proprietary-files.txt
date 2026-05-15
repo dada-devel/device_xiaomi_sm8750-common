@@ -1517,6 +1517,3 @@ vendor/lib64/libjpegdecoder_prebuilt.so
 vendor/lib64/libjpegencoder_prebuilt.so
 
 # Display HAL
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service3_v3_xiaomi.xml
-vendor/etc/vintf/manifest/mapper.qti.xml
