@@ -1,0 +1,1 @@
+allow ueventd vendor_xm_power_device:chr_file create;
