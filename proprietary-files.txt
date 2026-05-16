@@ -1096,6 +1096,7 @@ product/framework/uimgbamanagerlibrary.jar
 product/framework/uimservicelibrary.jar
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
+system_ext/framework/qcrilhook.jar
 system_ext/etc/permissions/qti_permissions.xml
 system_ext/framework/vendor.qti.ims.connectionaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar
