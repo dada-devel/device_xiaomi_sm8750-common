@@ -62,7 +62,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudiopreprocessing \
-    libaudioserviceexampleimpl \
     libbundleaidl \
     libldnhncr \
     libdownmixaidl \
@@ -135,10 +134,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
-# Graphics
+# Display / Graphics (source-built from hardware/qcom-caf/sm8750/display)
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
     libgralloc.qti \
-    vendor.qti.hardware.display.config-V12-ndk.vendor
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.config-V12-ndk.vendor \
+    vendor.qti.hardware.memtrack-service
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
@@ -184,10 +187,6 @@ $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.memtrack-service
 
 # Mountpoint
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
@@ -392,3 +391,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vendor_ramdisk/system/lib64/libext2_quota.so:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/system/lib64/libext2_quota.so \
     $(LOCAL_PATH)/vendor_ramdisk/system/lib64/libext2_uuid.so:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/system/lib64/libext2_uuid.so
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
+
+# Symlink for Xiaomi audio HAL compatibility
+PRODUCT_PACKAGES += \
+
+# Audio configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/../../../vendor/xiaomi/sm8750-common/proprietary/vendor/etc/audio/sku_sun/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sun/audio_effects.conf \
+    $(LOCAL_PATH)/../../../vendor/xiaomi/sm8750-common/proprietary/vendor/etc/audio/sku_sun/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sun/audio_effects.xml \
+    $(LOCAL_PATH)/../../../vendor/xiaomi/sm8750-common/proprietary/vendor/etc/audio/sku_sun/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sun/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/../../../vendor/xiaomi/sm8750-common/proprietary/vendor/etc/audio/sku_sun/mixer_paths_sun_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sun/mixer_paths_sun_mtp.xml \
+    $(LOCAL_PATH)/../../../vendor/xiaomi/sm8750-common/proprietary/vendor/etc/audio/sku_sun/resourcemanager_sun_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sun/resourcemanager_sun_mtp.xml

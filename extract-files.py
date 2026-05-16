@@ -58,16 +58,7 @@ blob_fixups: blob_fixups_user_type = {
             'android.media.audio.common.types-V2-ndk.so', 
             'android.media.audio.common.types-V3-ndk.so'
         ),
-    'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
-        .replace_needed('android.hardware.audio.core.sounddose-V1-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so'),
-    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
-        .add_needed('libaudioutils_shim.so')
-        .replace_needed('android.hardware.audio.core.sounddose-V2-ndk.so', 'android.hardware.audio.core.sounddose-V2-ndk_xiaomi.so')
-        .replace_needed('android.hardware.bluetooth.audio-impl.so', 'android.hardware.bluetooth.audio-impl_xiaomi.so')
-        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_xiaomi.so')
-        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_xiaomi.so'),
-    'vendor/lib64/android.hardware.bluetooth.audio-impl_xiaomi.so': blob_fixup()
-        .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_xiaomi.so'),
+    # Luminedroid audio HALs - no patching needed, they use _prebuilt suffix
     (
         'vendor/lib64/soundfx/libbundleaidl.so',
         'vendor/lib64/soundfx/libdlbvolaidl.so',
@@ -82,7 +73,7 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed(
             'libaudio_aidl_conversion_common_ndk.so', 
-            'libaudio_aidl_conversion_common_ndk_xiaomi.so'
+            'libaudio_aidl_conversion_common_ndk_prebuilt.so'
         ),
      (
        'vendor/lib64/libsxrservice.so'

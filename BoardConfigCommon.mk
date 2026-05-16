@@ -157,6 +157,7 @@ DEVICE_MATRIX_FILE := \
 
 DEVICE_MANIFEST_SKUS := sun
 DEVICE_MANIFEST_SUN_FILES := \
+    $(COMMON_PATH)/configs/vintf/manifest_audio.xml \
     $(COMMON_PATH)/configs/vintf/manifest_xiaomi.xml \
     $(COMMON_PATH)/configs/vintf/manifest_sun.xml
 

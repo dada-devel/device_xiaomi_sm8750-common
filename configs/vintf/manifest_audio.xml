@@ -1,0 +1,18 @@
+<manifest version="1.0" type="device">
+    <!-- AGM -->
+    <hal format="aidl">
+        <name>vendor.qti.hardware.agm</name>
+        <fqname>IAGM/default</fqname>
+    </hal>
+    <!-- PAL -->
+    <hal format="aidl">
+        <name>vendor.qti.hardware.pal</name>
+        <fqname>IPAL/default</fqname>
+    </hal>
+    <!-- PAL Event Notifier -->
+    <hal format="aidl">
+        <name>vendor.qti.hardware.paleventnotifier</name>
+        <version>2</version>
+        <fqname>IPALEventNotifier/default</fqname>
+    </hal>
+</manifest>
