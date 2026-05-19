@@ -4,3 +4,6 @@ persist.vendor.dpm.feature=11
 # Radio
 ro.telephony.sim_slots.count=2
 telephony.active_modems.max_count=2
+
+# Audio HAL Adapter Vendor Extension (required for voice call audio)
+ro.audio.ihaladaptervendorextension_enabled=true

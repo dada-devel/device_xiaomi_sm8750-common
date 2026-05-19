@@ -1,13 +1,5 @@
 <compatibility-matrix version="8.0" type="framework">
     <hal format="aidl" optional="true">
-        <name>android.hardware.vibrator</name>
-        <version>1-3</version>
-        <interface>
-            <name>IVibrator</name>
-            <regex-instance>.*</regex-instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>com.android.ozoaudio.notify</name>
         <interface>
             <name>IOzoNotify</name>

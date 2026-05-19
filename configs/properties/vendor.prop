@@ -224,8 +224,13 @@ persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.sib16_support=1
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.jbims=1
+persist.vendor.radio.is_vonr_enabled_0=true
+persist.vendor.radio.is_vonr_enabled_1=true
+persist.vendor.radio.calls.on.ims=true
 persist.vendor.rcs.singlereg.feature=1
-ro.vendor.radio.build_region=cn
+ro.vendor.radio.build_region=global
 ro.vendor.radio.build_profile=miui
 ro.com.android.dataroaming=true
 
@@ -253,3 +258,34 @@ ro.config.vc_call_vol_steps=11
 
 # WLAN
 wifi.aware.interface=wifi-aware0
+
+# Audio features (from LumineDroid)
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+audio.sys.mute.latency.factor=2
+audio.sys.noisy.broadcast.delay=500
+audio.sys.offload.pstimeout.secs=3
+vendor.audio.feature.hfp.enable=true
+vendor.audio.feature.kpi_optimize.enable=true
+vendor.audio.compress_capture.aac=true
+vendor.audio.compress_capture.enabled=true
+vendor.audio.hdr.spf.record.enable=false
+vendor.audio.hdr.record.enable=false
+vendor.audio.offload.buffer.size.kb=32
+vendor.audio.offload.track.enable=true
+vendor.audio.offload.multiple.enabled=false
+vendor.audio.flac.sw.decoder.24bit=true
+vendor.audio.use.sw.alac.decoder=true
+vendor.audio.use.sw.ape.decoder=true
+vendor.audio.use.sw.mpegh.decoder=true
+vendor.audio.volume.headset.gain.depcal=true
+vendor.audio.ull_record_period_multiplier=2
+vendor.qc2audio.per_frame.flac.dec.enabled=true
+vendor.qc2audio.suspend.enabled=true
+vendor.audio.feature.a2dp_offload.enable=true
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicerec=false
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.call.tx.ns=true
+ro.vendor.audio.algorithm.support=Fluence

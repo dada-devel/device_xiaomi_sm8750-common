@@ -75,7 +75,9 @@ PRODUCT_PACKAGES += \
     libaudioutils_shim \
     libalsautilsv2.vendor \
     libtinyalsav2.vendor \
-    libmediautils_vendor.vendor
+    libmediautils_vendor.vendor \
+    libaudiohalvendorextn \
+    qtiaudiohalvendorextn
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_policy_configuration.xml \
@@ -105,6 +107,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# Camera - Aperture privapp permissions
+PRODUCT_COPY_FILES += \
+    device/xiaomi/sm8750-common/permissions/privapp-permissions-aperture.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-aperture.xml
+
+# Phone state bridge (syncs Java audio mode to native AudioPolicyManager)
+PRODUCT_COPY_FILES += \
+    device/xiaomi/sm8750-common/audio/phone_state_bridge.sh:$(TARGET_COPY_OUT_VENDOR)/bin/phone_state_bridge.sh \
+    device/xiaomi/sm8750-common/audio/phone_state_bridge.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/phone_state_bridge.rc
+
 # Debug - INSECURE ADB for initial bringup (remove after boot validation)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
@@ -122,12 +133,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-# Using stock mfp-daemon instead of LineageOS fingerprint service
-# $(call soong_config_set,XIAOMI_BIOMETRICS_FINGERPRINT,USE_NEW_IMPL,true)
-# PRODUCT_PACKAGES += \
-#     android.hardware.biometrics.fingerprint-service.xiaomi \
-#     libudfpshandler
-
+# Using stock mfp-daemon (directly implements AIDL fingerprint interface)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
@@ -271,7 +277,11 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/qcom/opensource/commonsys/audio/hal_adapter
+
+# Vibrator
+$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
 # Vndservice manager
 PRODUCT_PACKAGES += \
@@ -294,7 +304,9 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
     telephony-ext \
-    xiaomi-telephony-stub
+    xiaomi-telephony-stub \
+    imssettings \
+    ImsDataChannelService
 
 PRODUCT_BOOT_JARS += \
     telephony-ext \

@@ -1500,15 +1500,15 @@ vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # Vibrator - Xiaomi HAL
-odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
-odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
-odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+#odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+#odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
+#odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
+#odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
 odm/lib64/libaachaptics.so
 odm/firmware/192_hapticsVideo_RTP.bin
-vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so;PRESIGNED
-vendor/lib64/hw/vibrator.default.so
-vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
+#vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so;PRESIGNED
+#vendor/lib64/hw/vibrator.default.so
+#vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
 
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.trustedui-aidl-service-qti
