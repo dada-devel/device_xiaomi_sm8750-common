@@ -133,7 +133,15 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-# Using stock mfp-daemon (directly implements AIDL fingerprint interface)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.xiaomi_prebuilt \
+    android.hardware.biometrics.fingerprint-V4-ndk.vendor \
+    android.hardware.biometrics.common-V4-ndk.vendor \
+    android.hardware.biometrics.common.config.vendor \
+    android.hardware.biometrics.common.thread.vendor \
+    android.hardware.biometrics.common.util.vendor \
+    libudfpshandler_prebuilt
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 

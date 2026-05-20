@@ -1,4 +1,4 @@
-## Proprietary files for Xiaomi sm8750-common - filtered from backup for LumineDroid
+## Proprietary files for Xiaomi sm8750-common
 
 
 # ACDB
@@ -561,10 +561,10 @@ vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/etc/vintf/manifest/vendor.qti.hardware.dsp-service.xml
 vendor/lib64/vendor.qti.hardware.dsp-V1-ndk.so
 
-# Fingerprint - mfp-daemon (stock)
-odm/bin/hw/mfp-daemon;DISABLE_DEPS
-odm/etc/init/init.mfp-daemon.aidl.rc
-odm/etc/vintf/manifest/AHBF-V3-service.xml
+# Fingerprint - mfp-daemon (stock) - DISABLED, using android.hardware.biometrics.fingerprint-service.xiaomi instead
+#odm/bin/hw/mfp-daemon;DISABLE_DEPS
+#odm/etc/init/init.mfp-daemon.aidl.rc
+#odm/etc/vintf/manifest/AHBF-V3-service.xml
 odm/etc/vintf/manifest/fod-aidl.xml
 odm/firmware/168_fingerprintRecord_P_RTP.bin
 # fingerprint.goodix_us.so, fingerprint.qcom_us.so, libgf_hal.so, libmmfp.so have device-specific deps, keep in dada
@@ -1682,7 +1682,7 @@ vendor/etc/audio/sku_sun/audio_policy_configuration.xml
 vendor/etc/audio/sku_sun/mixer_paths_sun_mtp.xml
 vendor/etc/audio/sku_sun/resourcemanager_sun_mtp.xml
 
-# Audio (Luminedroid prebuilts) - Not in global dump, built from source or not needed
+# Audio - built from source
 #vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so
 #vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_CHECKELF;DISABLE_DEPS

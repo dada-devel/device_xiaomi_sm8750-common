@@ -58,7 +58,7 @@ blob_fixups: blob_fixups_user_type = {
             'android.media.audio.common.types-V2-ndk.so', 
             'android.media.audio.common.types-V3-ndk.so'
         ),
-    # Luminedroid audio HALs - no patching needed, they use _prebuilt suffix
+    # Audio HALs - no patching needed, they use _prebuilt suffix
     (
         'vendor/lib64/soundfx/libbundleaidl.so',
         'vendor/lib64/soundfx/libdlbvolaidl.so',

@@ -23,3 +23,6 @@ persist.sys.wfd.virtual=0
 # RKPD
 remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
+
+# Camera vendor framework detection
+ro.vendor.qti.va_aosp.support=1

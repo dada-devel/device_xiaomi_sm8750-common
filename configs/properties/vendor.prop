@@ -259,7 +259,7 @@ ro.config.vc_call_vol_steps=11
 # WLAN
 wifi.aware.interface=wifi-aware0
 
-# Audio features (from LumineDroid)
+# Audio features
 audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
