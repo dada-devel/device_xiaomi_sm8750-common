@@ -36,3 +36,31 @@ allow hal_camera_server hal_dynamic_camera_service:service_manager { add find };
 allow hal_camera_server hal_quickcamera_service:service_manager { add find };
 allow hal_camera_server vendor_sysfs_xm_power:dir r_dir_perms;
 allow hal_camera_server vendor_sysfs_xm_power:file rw_file_perms;
+
+# Camera HAL needs to read system info for performance tuning
+allow hal_camera_default proc_meminfo:file r_file_perms;
+allow hal_camera_default proc_pressure_io:file r_file_perms;
+allow hal_camera_default proc_pressure_cpu:file r_file_perms;
+
+# Camera HAL needs battery info for thermal management
+allow hal_camera_default vendor_sysfs_battery_supply:dir search;
+allow hal_camera_default vendor_sysfs_battery_supply:file r_file_perms;
+
+# Camera HAL needs display feature info
+allow hal_camera_default vendor_sysfs_displayfeature:dir search;
+
+# Camera HAL reads aac_drc properties
+get_prop(hal_camera_default, aac_drc_prop)
+
+# Silence denials for default_prop (neverallow prevents allow)
+dontaudit hal_camera_default default_prop:file read;
+
+# Camera HAL uses qspmhal for power management
+binder_call(hal_camera_default, vendor_hal_qspmhal_default)
+
+# Camera HAL registers IntentAware service
+type hal_intentaware_service, hal_service_type, service_manager_type;
+allow hal_camera_default hal_intentaware_service:service_manager add;
+
+# Silence qspmhal denials (neverallow prevents allow)
+dontaudit hal_camera_default vendor_hal_qspmhal_service:service_manager find;

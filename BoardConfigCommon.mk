@@ -62,10 +62,9 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 
-# SELinux - PERMISSIVE for initial bringup (remove after boot validation)
+# Kernel cmdline
 BOARD_KERNEL_CMDLINE := \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    androidboot.selinux=permissive
+    video=vfb:640x400,bpp=32,memsize=3072000
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \

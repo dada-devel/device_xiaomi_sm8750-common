@@ -12,3 +12,13 @@ allow vendor_init minidump_data_file:dir create_dir_perms;
 allow vendor_init minidump_data_file:file create_file_perms;
 
 allow init nfc:binder call;
+
+# vendor_init needs to set fingerprint properties
+set_prop(vendor_init, vendor_fp_prop)
+
+# Silence denials for bluetooth_prop and radio_prop (neverallow prevents access)
+dontaudit vendor_init bluetooth_prop:property_service set;
+dontaudit vendor_init radio_prop:file read;
+
+# init needs to mount tracefs
+allow init debugfs_tracing_debug:dir mounton;

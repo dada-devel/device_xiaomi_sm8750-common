@@ -116,13 +116,6 @@ PRODUCT_COPY_FILES += \
     device/xiaomi/sm8750-common/audio/phone_state_bridge.sh:$(TARGET_COPY_OUT_VENDOR)/bin/phone_state_bridge.sh \
     device/xiaomi/sm8750-common/audio/phone_state_bridge.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/phone_state_bridge.rc
 
-# Debug - INSECURE ADB for initial bringup (remove after boot validation)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.adb.secure=0 \
-    ro.debuggable=1 \
-    persist.sys.usb.config=adb \
-    service.adb.root=1
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey

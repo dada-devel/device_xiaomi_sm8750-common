@@ -62,3 +62,6 @@ type vendor_data_touchreport_file, data_file_type, file_type;
 
 # Wlan
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
+
+# Block devices
+type vendor_rescue_block_device, dev_type;
