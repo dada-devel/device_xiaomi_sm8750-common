@@ -1,6 +1,10 @@
 # CNE
 persist.vendor.cne.feature=1
 
+# Bluetooth A2DP offload
+ro.bluetooth.a2dp_offload.supported=true
+persist.bluetooth.a2dp_offload.disabled=false
+
 # Media
 media.aac_51_output_enabled=true
 media.settings.xml=/vendor/etc/media_profiles_sun.xml
