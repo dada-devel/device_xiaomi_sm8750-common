@@ -97,10 +97,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_dlkm system_ext pro
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
 
-# Reserve space for GApps installation
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1073741824
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 536870912
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1073741824
+-include vendor/lineage/config/BoardConfigReservedSize.mk
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 # Platform
@@ -126,7 +123,8 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    $(COMMON_PATH)/sepolicy/vendor
 
 # Security
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
