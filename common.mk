@@ -284,6 +284,10 @@ PRODUCT_SOONG_NAMESPACES += \
 # Vibrator
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
+# Dolby
+PRODUCT_SOONG_NAMESPACES += hardware/dolby
+PRODUCT_PACKAGES += LunarisDolby
+
 # Vndservice manager
 PRODUCT_PACKAGES += \
     vndservicemanager

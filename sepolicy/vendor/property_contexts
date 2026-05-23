@@ -157,6 +157,8 @@ vendor.video.mode.status u:object_r:vendor_displayfeature_prop:s0
 # Dolby
 persist.vendor.dolbyv. u:object_r:vendor_dolbyv_prop:s0
 vendor.dolbyv. u:object_r:vendor_dolbyv_prop:s0
+ro.vendor.dolby. u:object_r:vendor_audio_prop:s0
+vendor.audio.dolby. u:object_r:vendor_audio_prop:s0
 
 # Fingerprint
 persist.vendor.fpc. u:object_r:vendor_fp_prop:s0

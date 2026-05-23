@@ -94,3 +94,8 @@ genfscon sysfs /devices/platform/soc/soc:mca_business_charger/power_supply/wirel
 genfscon sysfs /devices/platform/soc/soc:mca_business_charger/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:mi_t1_chip/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup u:object_r:sysfs_wakeup:s0
+
+# Vibrator/Haptics
+genfscon sysfs /class/qcom-haptics u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/984000.i2c/i2c-2/2-005a u:object_r:sysfs_vibrator:s0
+
