@@ -7,6 +7,13 @@ vendor/etc/acdbdata/haptics_data/double_click.pcm
 vendor/etc/acdbdata/haptics_data/heavy_click.pcm
 vendor/etc/acdbdata/haptics_data/pop.pcm
 vendor/etc/acdbdata/haptics_data/reserved_1.pcm
+vendor/etc/acdbdata/haptics_data/reserved_2.pcm
+vendor/etc/acdbdata/haptics_data/reserved_3.pcm
+vendor/etc/acdbdata/haptics_data/reserved_4.pcm
+vendor/etc/acdbdata/haptics_data/reserved_5.pcm
+vendor/etc/acdbdata/haptics_data/reserved_6.pcm
+vendor/etc/acdbdata/haptics_data/reserved_7.pcm
+vendor/etc/acdbdata/haptics_data/reserved_8.pcm
 vendor/etc/acdbdata/haptics_data/texture_tick.pcm
 vendor/etc/acdbdata/haptics_data/thud.pcm
 vendor/etc/acdbdata/haptics_data/tick.pcm

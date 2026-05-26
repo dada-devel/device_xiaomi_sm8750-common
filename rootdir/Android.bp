@@ -44,3 +44,10 @@ prebuilt_etc {
     src: "etc/ueventd.qcom.rc",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.haptics.rc",
+    src: "etc/init.haptics.rc",
+    sub_dir: "init",
+    vendor: true,
+}

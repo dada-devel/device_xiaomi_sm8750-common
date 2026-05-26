@@ -255,6 +255,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     init.xiaomi.rc \
+    init.haptics.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
@@ -284,6 +285,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/audio/hal_adapter
 
 # Vibrator
+$(call soong_config_set_bool,qti_vibrator,use_libpalclient,true)
+$(call soong_config_set,qti_vibrator,libpalclient_namespace,hardware/qcom-caf/sm8750/audio/pal/ipc/aidl/client)
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
 # Dolby

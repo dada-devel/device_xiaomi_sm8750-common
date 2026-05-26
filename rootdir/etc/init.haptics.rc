@@ -1,0 +1,9 @@
+on property:sys.boot_completed=1
+    setprop vendor.aihaptic.interaction.transient_intensity 100
+    setprop vendor.aihaptic.interaction.transient_sharpness 56
+    setprop vendor.aihaptic.interaction.continuous_intensity 100
+    setprop vendor.aihaptic.interaction.continuous_sharpness 56
+    setprop vendor.aihaptic.warn.transient_intensity 100
+    setprop vendor.aihaptic.warn.transient_sharpness 56
+    setprop vendor.aihaptic.warn.continuous_intensity 65
+    setprop vendor.aihaptic.warn.continuous_sharpness 56
