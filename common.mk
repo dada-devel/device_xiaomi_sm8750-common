@@ -291,10 +291,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     vendor/qcom/opensource/commonsys/audio/hal_adapter
 
-# Vibrator
-$(call soong_config_set_bool,qti_vibrator,use_libpalclient,true)
-$(call soong_config_set,qti_vibrator,libpalclient_namespace,hardware/qcom-caf/sm8750/audio/pal/ipc/aidl/client)
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+# Vibrator - Xiaomi proprietary HAL (provides RichTap/CoolVibrator support)
+# Blobs enabled in proprietary-files.txt, no source build needed
 
 # Dolby
 PRODUCT_SOONG_NAMESPACES += hardware/dolby
