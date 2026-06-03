@@ -1513,6 +1513,7 @@ odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
 odm/lib64/libaachaptics.so
 odm/firmware/192_hapticsVideo_RTP.bin
+vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so
 vendor/lib64/hw/vibrator.default.so
 vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
 

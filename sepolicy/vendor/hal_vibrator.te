@@ -1,3 +1,4 @@
+# Existing sysfs and input device access
 allow hal_vibrator_default mnt_vendor_file:dir search;
 allow hal_vibrator_default mnt_vendor_file:file { getattr open read write };
 allow hal_vibrator_default sysfs:dir { open read };
@@ -6,3 +7,30 @@ allow hal_vibrator_default sysfs_vibrator:dir { open read search };
 allow hal_vibrator_default sysfs_vibrator:file { getattr open read write };
 allow hal_vibrator_default input_device:chr_file { ioctl open read write };
 allow hal_vibrator_default input_device:dir { open read search };
+binder_call(servicemanager, hal_vibrator_default)
+
+# Xiaomi vibratorfeature specific rules
+
+# qcom_haptic device access
+allow hal_vibrator_default qcom_haptic_device:chr_file { ioctl open read write };
+
+# Audio integration (PAL client for haptic-audio sync)
+allow hal_vibrator_default audio_device:chr_file { ioctl open read write };
+allow hal_vibrator_default hal_audio_default:fd use;
+binder_call(hal_vibrator_default, hal_audio_default)
+
+# Sensors for haptic feedback
+allow hal_vibrator_default hal_sensors_default:fd use;
+binder_call(hal_vibrator_default, hal_sensors_default)
+
+# Config files
+allow hal_vibrator_default vendor_configs_file:dir search;
+allow hal_vibrator_default vendor_configs_file:file { getattr open read };
+
+# Persist for calibration data (via mnt_vendor_file for parent search)
+allow hal_vibrator_default persist_haptics_file:dir create_dir_perms;
+allow hal_vibrator_default persist_haptics_file:file create_file_perms;
+
+# Properties
+set_prop(hal_vibrator_default, vendor_haptic_prop)
+get_prop(hal_vibrator_default, vendor_haptic_prop)
