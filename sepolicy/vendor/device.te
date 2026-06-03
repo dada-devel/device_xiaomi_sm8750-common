@@ -10,3 +10,6 @@ type vendor_fingerprint_device, dev_type;
 
 # Touchfeature
 type touchfeature_device, dev_type;
+
+# Vibrator
+type qcom_haptic_device, dev_type;
