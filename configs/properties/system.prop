@@ -30,3 +30,14 @@ remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Camera vendor framework detection
 ro.vendor.qti.va_aosp.support=1
+
+# Power/Battery optimizations
+pm.sleep_mode=1
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
+ro.sys.fw.bg_apps_limit=24
+
+# WiFi power saving
+wifi.supplicant_scan_interval=180
+ro.wifi.power.reduction=1

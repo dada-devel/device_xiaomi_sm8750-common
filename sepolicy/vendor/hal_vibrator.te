@@ -15,7 +15,6 @@ binder_call(servicemanager, hal_vibrator_default)
 allow hal_vibrator_default qcom_haptic_device:chr_file { ioctl open read write };
 
 # Audio integration (PAL client for haptic-audio sync)
-allow hal_vibrator_default audio_device:chr_file { ioctl open read write };
 allow hal_vibrator_default hal_audio_default:fd use;
 binder_call(hal_vibrator_default, hal_audio_default)
 
