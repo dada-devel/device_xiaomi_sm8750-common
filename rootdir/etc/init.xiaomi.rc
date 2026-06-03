@@ -14,6 +14,12 @@ on boot
     chown system system /sys/bus/platform/devices/soc:xiaomi_fingerprint/intr2
     chmod 0666 /sys/bus/platform/devices/soc:xiaomi_fingerprint/intr2
 
+    # Lineage Health charging control - change ownership so HAL can write without dac_override
+    chown root root /sys/devices/platform/soc/soc:smart_charge/smart_batt
+    chown root root /sys/devices/platform/soc/soc:mca_business_charger/debug_ctrl
+    chmod 0644 /sys/devices/platform/soc/soc:smart_charge/smart_batt
+    chmod 0644 /sys/devices/platform/soc/soc:mca_business_charger/debug_ctrl
+
 on post-fs-data
     # for primary panel
     chown system system /sys/class/mi_display/disp-DSI-0/wp_info

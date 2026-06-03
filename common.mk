@@ -188,14 +188,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/configs/linker.config.json
 
-# Lineage Health
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/qcom-battery/night_charging)
-$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
-$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
+# Lineage Health - charging control via mca_business_charger debug_ctrl
+# Primary: soc_limit format "soc_limit <enable> <pct>" - needs smart_batt=1 to work
+# Secondary: smart_batt enables/disables smart charge limit enforcement
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/devices/platform/soc/soc:mca_business_charger/debug_ctrl)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,soc_limit 0 0)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,soc_limit 1 15)
+$(call soong_config_set,lineage_health,charging_control_charging_path2,/sys/devices/platform/soc/soc:smart_charge/smart_batt)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled2,0)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled2,1)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_toggle,true)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_limit,false)
 
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
-
 # Mountpoint
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
 
