@@ -1,0 +1,7 @@
+service vendor.vibrator-shim /vendor/bin/hw/android.hardware.vibrator-service.xiaomi-shim
+    class hal
+    user system
+    group system
+
+on property:init.svc.vibratorfeature-hal-service=running
+    start vendor.vibrator-shim

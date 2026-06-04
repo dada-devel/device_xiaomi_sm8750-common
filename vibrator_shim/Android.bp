@@ -1,0 +1,15 @@
+cc_binary {
+    name: "android.hardware.vibrator-service.xiaomi-shim",
+    relative_install_path: "hw",
+    vendor: true,
+    init_rc: ["android.hardware.vibrator-service.xiaomi-shim.rc"],
+    vintf_fragments: ["android.hardware.vibrator-service.xiaomi-shim.xml"],
+
+    srcs: ["service.cpp"],
+
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V3-ndk",
+    ],
+}
