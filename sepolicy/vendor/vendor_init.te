@@ -1,0 +1,2 @@
+# Haptic properties
+set_prop(vendor_init, vendor_haptic_prop)

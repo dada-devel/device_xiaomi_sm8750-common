@@ -48,3 +48,4 @@ vendor.xiaomi.hardware.aidl.intentaware.IIntentAwareService/default u:object_r:h
 # Vibrator
 android.hardware.vibrator.IVibrator/vibratorfeature    u:object_r:hal_vibrator_service:s0
 android.hardware.vibrator.IVibrator/default            u:object_r:hal_vibrator_service:s0
+vendor.hardware.vibratorfeature.IVibratorExt/default   u:object_r:hal_vibrator_service:s0

@@ -22,3 +22,5 @@ allow hal_audio_default hal_mediaeventgatherservice_service:service_manager find
 
 # Audio HAL needs debugfs access for PAL
 allow hal_audio_default debugfs:dir r_dir_perms;
+# Audio HAL needs haptics sysfs for haptic-audio sync
+r_dir_file(hal_audio_default, sysfs_vibrator)

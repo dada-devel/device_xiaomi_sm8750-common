@@ -1,0 +1,14 @@
+cc_library_shared {
+    name: "libvibratorext_shim",
+    vendor: true,
+    srcs: ["shim_lib.cpp"],
+    shared_libs: [
+        "libbinder_ndk",
+        "liblog",
+        "libdl",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

@@ -203,4 +203,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.hardware.vibratorfeature</name>
+        <version>1</version>
+        <interface>
+            <name>IVibratorExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

@@ -293,7 +293,12 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Vibrator - Xiaomi proprietary HAL (provides RichTap/CoolVibrator support)
 # Binary patched to register as IVibrator/default instead of vibratorfeature
+# LD_PRELOAD shim intercepts AIBinder_setExtension and registers IVibratorExt as named service
+PRODUCT_PACKAGES += \
+    libvibratorext_shim
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vibratorext_shim/vendor.xiaomi.hardware.vibratorfeature.service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 # Dolby
 PRODUCT_SOONG_NAMESPACES += hardware/dolby
 PRODUCT_PACKAGES += LunarisDolby
