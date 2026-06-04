@@ -13,6 +13,6 @@
     </hal>
     <hal format="aidl" override="true">
         <name>android.hardware.vibrator</name>
-        <fqname>IVibrator/vibratorfeature</fqname>
+        <fqname>IVibrator/default</fqname>
     </hal>
 </manifest>

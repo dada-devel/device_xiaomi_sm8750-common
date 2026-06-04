@@ -292,9 +292,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/audio/hal_adapter
 
 # Vibrator - Xiaomi proprietary HAL (provides RichTap/CoolVibrator support)
-# Blobs enabled in proprietary-files.txt, shim re-registers as "default"
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.xiaomi-shim
+# Binary patched to register as IVibrator/default instead of vibratorfeature
 
 # Dolby
 PRODUCT_SOONG_NAMESPACES += hardware/dolby
