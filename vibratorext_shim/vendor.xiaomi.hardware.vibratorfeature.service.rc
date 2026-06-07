@@ -1,9 +1,0 @@
-# Override the ODM vibrator HAL service to inject our shim library
-# This intercepts AIBinder_setExtension and also registers IVibratorExt as a named service
-
-service vibratorfeature-hal-service /odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-    override
-    class hal
-    user system
-    group system input
-    setenv LD_PRELOAD /vendor/lib64/libvibratorext_shim.so
