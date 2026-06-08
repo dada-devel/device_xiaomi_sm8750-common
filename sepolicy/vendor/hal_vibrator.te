@@ -33,3 +33,8 @@ allow hal_vibrator_default persist_haptics_file:file create_file_perms;
 # Properties
 set_prop(hal_vibrator_default, vendor_haptic_prop)
 get_prop(hal_vibrator_default, vendor_haptic_prop)
+
+# Allow vibrator HAL to access sound card state for audio-haptic sync
+allow hal_vibrator_default vendor_sysfs_sndcard:file { read write open getattr };
+allow hal_vibrator_default vendor_sysfs_sndcard:dir search;
+

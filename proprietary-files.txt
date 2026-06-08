@@ -40,6 +40,7 @@ vendor/lib64/libvmmem.so
 odm/etc/audio/hrtf5c.bin
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so
+odm/lib64/libagmdevice.so
 odm/lib64/libwindns.so;DISABLE_CHECKELF
 vendor/bin/audioadsprpcd
 vendor/bin/hw/audiohalservice.qti
@@ -1510,7 +1511,7 @@ odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
 odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
 # Replaced by vibratorext_shim manifest
-odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+#odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
 odm/lib64/libaachaptics.so
 vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so
 vendor/lib64/hw/vibrator.default.so
