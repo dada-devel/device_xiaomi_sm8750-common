@@ -41,3 +41,15 @@ ro.sys.fw.bg_apps_limit=24
 # WiFi power saving
 wifi.supplicant_scan_interval=180
 ro.wifi.power.reduction=1
+
+# IMS/VoLTE/VoWiFi override
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# IWLAN (WiFi Calling) enablement
+persist.dbg.allow_ims_off=0
+persist.vendor.data.iwlan.enable=true
+persist.data.iwlan.enable=true
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.is_wfc_enabled=true
