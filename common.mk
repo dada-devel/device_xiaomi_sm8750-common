@@ -86,9 +86,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default
+# Bluetooth (AIDL QTI stack from vendor prebuilts)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -115,6 +113,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/xiaomi/sm8750-common/audio/phone_state_bridge.sh:$(TARGET_COPY_OUT_VENDOR)/bin/phone_state_bridge.sh \
     device/xiaomi/sm8750-common/audio/phone_state_bridge.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/phone_state_bridge.rc
+
+# Thermal and power configs from working build (crDroid v12.11)
+PRODUCT_COPY_FILES += \
+    device/xiaomi/sm8750-common/configs/vendor-etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
+    device/xiaomi/sm8750-common/configs/vendor-etc/thermal-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-map.conf \
+    device/xiaomi/sm8750-common/configs/vendor-etc/thermald-devices.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-devices.conf \
+    device/xiaomi/sm8750-common/configs/vendor-etc/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
+# Dolby Vision configs from working build (odm/vendor overlay paths)
+PRODUCT_COPY_FILES += \
+    device/xiaomi/sm8750-common/configs/dolby-vision/odm_vendor_etc.cfg:$(TARGET_COPY_OUT_ODM)/vendor/etc/dolby_vision.cfg \
+    device/xiaomi/sm8750-common/configs/dolby-vision/odm_vendor_persist_display.cfg:$(TARGET_COPY_OUT_ODM)/vendor/persist/display/dolby_vision.cfg
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -294,12 +304,8 @@ PRODUCT_SOONG_NAMESPACES += \
 # Vibrator - Xiaomi proprietary HAL (provides RichTap/CoolVibrator support)
 # Binary patched to register as IVibrator/default instead of vibratorfeature
 # LD_PRELOAD shim intercepts AIBinder_setExtension and registers IVibratorExt as named service
-PRODUCT_PACKAGES += \
-
-PRODUCT_COPY_FILES += \
 # Dolby
-PRODUCT_SOONG_NAMESPACES += hardware/dolby
-PRODUCT_PACKAGES += LunarisDolby
+$(call inherit-product, hardware/dolby/dolby.mk)
 
 # Vndservice manager
 PRODUCT_PACKAGES += \
